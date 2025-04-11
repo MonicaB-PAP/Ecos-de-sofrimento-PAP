@@ -1,0 +1,218 @@
+body {
+    background-color: #0d0d0d;
+    font-family: 'Cinzel', serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(7, 7, 7, 0.943);
+    z-index: 1000;
+}
+
+/* Banner */
+.banner {
+    padding: 160px 0;
+    text-align: center;
+    color: #c91212;
+    background: url('banner.jpg') no-repeat center center/cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    animation: slideIn 1s ease-in-out;
+    z-index: 2;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.banner h1,
+.banner p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Botões Personalizados */
+.btn-custom {
+    background-color: #a61d25;
+    color: white;
+    margin: 10px;
+    border-radius: 30px;
+    padding: 20px 50px;
+    border: none;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background-color: #8b1418;
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Cartões */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 15px 70px rgba(0, 0, 0, 0.9);
+    max-width: 250px;
+    background-color: #1a1a1a;
+}
+
+.card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 20px 100px rgba(0, 0, 0, 0.9);
+}
+
+.card-img-top {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Carrossel */
+.carousel-inner {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.carousel-item {
+    padding: 0 20px;
+}
+
+.character-card {
+    margin: 0 20px;
+}
+
+/* Sinopse */
+.synopsis {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s;
+}
+
+.synopsis:hover {
+    transform: scale(1.02);
+}
+
+.synopsis p {
+    color: #c9bbbc;
+}
+
+/* Descrição */
+.highlight {
+    font-family: 'Courier Prime';
+    color: #f0f0f0;
+    line-height: 1.3em;
+    padding: 10px 20px;
+    overflow: visible;
+    text-align: justify;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Garantir que a fonte do body não afete a sinopse */
+body .synopsis {
+    font-family: 'Cinzel', serif;
+}
+
+/* Títulos */
+h3 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #c72c3e;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.9);
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #f0e68c;
+    text-align: center;
+    padding: 60px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.9);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Escondido */
+.hidden {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .character-card {
+        margin: 20px 0;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+    
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .carousel-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
